@@ -3,7 +3,7 @@ function Brickset() {
 
 Brickset.prototype.search = function(query) {
   var resultArray = [];
-  var result = http().get("https://brickset.com/api/v3.asmx/getSets?apiKey=3-qx0l-RNvb-G4eYE&userHash=&params={'query':'" + encodeURIComponent(query) + "'}");
+  var result = http().get("https://brickset.com/api/v3.asmx/getSets?apiKey=&userHash=&params={'query':'" + encodeURIComponent(query) + "'}");
   var rawxml = result.body;
   if (rawxml) {
     var xml = new XmlDocument(rawxml);
@@ -19,7 +19,7 @@ Brickset.prototype.search = function(query) {
 
 Brickset.prototype.getDetails = function(number) {
   var object = {};
-  var result = http().get("https://brickset.com/api/v3.asmx/getSets?apiKey=3-qx0l-RNvb-G4eYE&userHash=&params={'number':'" + encodeURIComponent(number) + "'}");
+  var result = http().get("https://brickset.com/api/v3.asmx/getSets?apiKey=&userHash=&params={'number':'" + encodeURIComponent(number) + "'}");
   var rawxml = result.body;
   if (rawxml) {
     var xml = new XmlDocument(rawxml);
